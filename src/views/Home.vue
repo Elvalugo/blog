@@ -8,6 +8,7 @@
 import BookCard from './components/BookCard.vue'
 import AppFooter from './components/AppFooter.vue'
 import AppHeader from './components/AppHeader.vue'
+import HelloWord from './components/HelloWord.vue' 
 
 export default {
   components: { BookCard },
@@ -18,7 +19,8 @@ export default {
   components: {
     AppFooter,
     AppHeader,
-    BookCard
+    BookCard,
+    HelloWord
   }
 }
 }
