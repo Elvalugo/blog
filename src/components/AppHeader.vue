@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary shadow-sm ">
     <div class="container">
       <router-link class="navbar-brand d-flex align-items-center" to="/">
         <i class="fas fa-pen-nib me-2"></i> <!-- Ícono de fuente Awesome -->
@@ -35,12 +35,21 @@
   
 
     <div class="container mt-5"> 
-    <h1 style="color:black;"><div class="mb-4 text-center">Bienvenidos a mi blog de frases</div></h1>
+    <h1 style="color:black;"><div class="animate_animate_swing mb-4 text-center ">Bienvenidos a mi blog de frases</div></h1>
+    <div class="carousel">
+      <div class="carousel-inner">
+            <img src="/imgs/imagen1.jpg" alt="Imagen 1">
+
+      </div>
+      <button class="prev">Anterior</button>
+      <button class="prev">Siguiente</button>
+     </div> 
 </div>
 
     
 
 </template>
+
 
 
 <style scoped>
