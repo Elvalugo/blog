@@ -1,35 +1,48 @@
-<template>
-  <div class="card h-100 d-flex-column shadow animate__animated animate__fadeIn position-relative" data-aos="fade-up">
 
- <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-    </div>
-        <h5 class="card-title">{{ titulo }}</h5>
-   </div>
+<template>
+<body>
+  <div v-for="imgs in imgs" :key="imgs">
+    <img :src="imgs" :alt="imgs" />
+    <button @click="toggleFavorite(imgs)">
+      {{ isFavorite(imgs) ? '⭐ Quitar de favoritos' : '☆ Agregar a favoritos' }}
+    </button>
+  </div>
+
+  <h2></h2>
+  <div v-for="fav in favorites" :key="fav">
+    <img :src="fav" :alt="fav" />
+  </div>
+  </body>
 </template>
 
 <script>
 export default {
-  props: {
-   titulo: String 
+  data() {
+    return {
+      images: [
+        'ap.jpeg',
+        'ap2.jpeg',
+        'ap3.jpeg',
+      ],
+      favorites: [],
+    };
   },
-  }
+  created() {
+    const saved = localStorage.getItem('favorites');
+    this.favorites = saved ? JSON.parse(saved) : [];
+  },
+  methods: {
+    toggleFavorite(img) {
+      if (this.isFavorite(img)) {
+        this.favorites = this.favorites.filter(f => f !== img);
+      } else {
+        this.favorites.push(img);
+      }
+      localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    },
+    isFavorite(img) {
+      return this.favorites.includes(img);
+    },
+  },
+};
 </script>
-
-<style>
-.card {
-  position: relative;
-}
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(7, 0, 0, 0.2);
-}
-
-</style>
-
-
