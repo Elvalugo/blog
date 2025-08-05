@@ -12,6 +12,25 @@
   <div v-for="fav in favorites" :key="fav">
     <img :src="fav" :alt="fav" />
   </div>
+
+<!-- Sección Acerca de -->
+    <div v-if="categoriaSeleccionada === 'Acerca de'" class="container text-center mt-4">
+      <p class="lead">
+        💬 <strong>Acerca de:</strong> BlogFM es un espacio dedicado a compartir frases que inspiran, motivan y transforman. Creado con amor para quienes disfrutan reflexionar.
+      </p>
+    </div>
+
+    <!-- Sección Contacto -->
+    <div v-if="categoriaSeleccionada === 'Contacto'" class="container text-center mt-4">
+      <p class="lead">
+        📧 <strong>Contacto:</strong><br />
+        Nombre: [Tu nombre aquí] <br />
+        Número: +52-xxx-xxx-xxxx <br />
+        Email: <a :href="mailtoLink">contacto@blogfm.com</a>
+      </p>
+    </div>
+
+
   </body>
 </template>
 

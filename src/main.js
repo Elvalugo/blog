@@ -1,7 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import 'animate.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './Router';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css';
 
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount('#app');

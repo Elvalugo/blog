@@ -1,6 +1,8 @@
 <template>
   <body>
   <div>
+    
+
     <!-- NAVBAR -->
      <nav :style="{ backgroundColor: '#CA5FC0', color: 'black', padding: '15px', fontSize: '18px', textAlign: 'left', }">
    BlogFM  </nav>
@@ -9,56 +11,8 @@
           <img src="imgs/logom.png" alt="BlogFM logom" width="50" class="d-inline-block align-text-top" />
         </router-link>
   </div>
- 
-        <!-- TÍTULO -->
-    <div class="container mt-5">
-      <h1 class="text-center animate__animated animate__swing mb-4" style="color:black;">
-        <strong><em>Bienvenidos a Blog de Frases</em></strong>
-      </h1>
-    </div>
- 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarContent"
-        aria-controls="navbarContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <button class="nav-link btn btn-link text-white" @click="seleccionarCategoria('Acerca de')">
-              Acerca de
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link btn btn-link text-white" @click="seleccionarCategoria('Contacto')">
-              Contacto
-            </button>
-          </li>
-        </ul>
-      </div>
-  
-   
-
-    <!-- CATEGORÍAS COMO BOTONES -->
-    <div class="category-buttons">
-      <button
-        v-for="(categoria, index) in categorias"
-        :key="index"
-        @click="seleccionarCategoria(categoria)"
-        :class="{ activo: categoriaSeleccionada === categoria }"
-      >
-        {{ categoria }}
-      </button>
-    </div>
-
-    <!-- Sección Acerca de -->
+<!-- Sección Acerca de -->
     <div v-if="categoriaSeleccionada === 'Acerca de'" class="container text-center mt-4">
       <p class="lead">
         💬 <strong>Acerca de:</strong> BlogFM es un espacio dedicado a compartir frases que inspiran, motivan y transforman. Creado con amor para quienes disfrutan reflexionar.
@@ -74,6 +28,32 @@
         Email: <a :href="mailtoLink">contacto@blogfm.com</a>
       </p>
     </div>
+
+
+
+ 
+        <!-- TÍTULO -->
+    <div class="container mt-5">
+      <h1 class="text-center animate__animated animate__swing mb-4" style="color:black;">
+        <strong><em>Bienvenidos a Blog de Frases</em></strong>
+      </h1>
+    </div>
+  
+  
+   
+
+    <!-- CATEGORÍAS COMO BOTONES -->
+    <div class="category-buttons">
+      <button
+        v-for="(categoria, index) in categorias"
+        :key="index"
+        @click="seleccionarCategoria(categoria)"
+        :class="{ activo: categoriaSeleccionada === categoria }"
+      >
+        {{ categoria }}
+      </button>
+    </div>
+ 
 
     <!-- CARRUSEL -->
     <div v-if="categoriaSeleccionada === 'Todas las categorias'" class="carousel-container">

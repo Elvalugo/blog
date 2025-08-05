@@ -8,5 +8,7 @@ import BookCard from './BookCard.vue';
   <router-view />
   <BookCard />
   <AppFooter />
+  <Acerca />
+  <Contacto />
   <HelloWord /> <!-- ← Este lo muestra SIEMPRE -->
 </template>

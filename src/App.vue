@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="d-flex flex-column min-vh-100">
-    <AppHeader />
+    <AppHeader/>
     <main class="flex-fill">
-      <router-view />
+      <router-view/>
     </main>
     <AppFooter />
     <BookCard />
@@ -13,9 +13,10 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
-import BookCard from  './components/BookCard.vue';
+import BookCard from  './components/BookCard.vue'
 
 export default {
-  components: { AppHeader, AppFooter, BookCard,  },
+  name: 'App',
+  components: { AppHeader, AppFooter, BookCard },
 }
 </script>
